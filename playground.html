@@ -1,0 +1,14 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CODEX | ساحة التجربة</title><script src="auth.js"></script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap"><link rel="stylesheet" href="playground.css"></head><body>
+<header><a class="brand" href="index.html">CODE<span>X</span></a><a href="index.html">العودة للرئيسية</a></header><main><div class="heading"><span class="eyebrow">CODEX PLAYGROUND</span><h1>ساحة التجربة</h1><p>اكتب HTML وCSS وJavaScript وشاهد النتيجة. جرّب بحرية.</p></div>
+<div class="workbench"><section class="code-panels">
+<label>HTML<textarea id="htmlCode" spellcheck="false"><h1>أهلاً بك في CODEX</h1>
+<p>دي أول تجربة ليا.</p>
+<button id="hello">اضغط هنا</button></textarea></label>
+<label>CSS<textarea id="cssCode" spellcheck="false">body { font-family: Arial; text-align: center; padding: 35px; background: #f4edff; }
+h1 { color: #7138c9; }
+button { padding: 10px 18px; border: 0; border-radius: 8px; background: #7138c9; color: white; cursor: pointer; }</textarea></label>
+<label>JavaScript<textarea id="jsCode" spellcheck="false">document.getElementById("hello").addEventListener("click", () => {
+  alert("الكود شغال! ممتاز 🎉");
+});</textarea></label>
+<div class="run-row"><button id="run" class="run">▶ تشغيل الكود <small>(Ctrl+Enter)</small></button><label class="auto"><input type="checkbox" id="auto" checked> تشغيل تلقائي</label><button id="reset" class="reset-btn" type="button">↺ إعادة ضبط</button></div></section>
+<section class="preview"><div class="preview-head">معاينة النتيجة</div><iframe id="result" title="نتيجة الكود" sandbox="allow-scripts allow-modals"></iframe><div class="console-head"><span>الكونسول (console.log)</span><button id="clearConsole" type="button">مسح</button></div><div id="console" class="console" aria-live="polite"></div></section></div></main><script src="playground.js"></script></body></html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>CODEX | الدرس</title><script src="auth.js"></script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap"><link rel="stylesheet" href="course.css"></head>
+<body>
+<header class="topbar"><a class="brand" href="index.html">CODE<span>X</span></a><div class="top-links"><a class="back" href="playground.html">ساحة التجربة</a><a class="back" href="index.html">← الرئيسية</a></div></header><noscript><p style="text-align:center;padding:20px">محتاج تفعّل JavaScript عشان الدروس تشتغل.</p></noscript>
+<main class="layout">
+  <section class="course-head">
+    <div><span class="eyebrow">CODEX LEARNING PATH</span><h1 id="courseTitle">المسار</h1><p id="courseSubtitle"></p></div>
+    <div class="progress-wrap"><div class="progress-label"><span>تقدم المسار</span><b id="progressText">0%</b></div><div class="progress"><i id="progressFill"></i></div><small id="progressCount">0 من 5 دروس</small></div>
+  </section>
+  <div class="columns">
+    <aside class="sidebar"><div class="side-title"><h2>خريطة المسار</h2><span>⭐ <b id="xp">0</b> XP</span></div><div id="lessonList" class="lesson-list"></div><button id="resetBtn" class="btn ghost reset">إعادة ضبط تقدم المسار</button><div class="side-tip">💡 <b>نصيحة:</b><br>اقرأ الشرح، جرّب المثال، وبعدها حل التحدي بنفسك.</div></aside>
+    <article class="lesson">
+      <div class="lesson-top"><span id="lessonIndex">الدرس 01</span><span class="lesson-kind">شرح + تدريب</span></div>
+      <h2 id="lessonTitle"></h2><p id="lessonText" class="lesson-text"></p>
+      <div class="example"><div class="example-head"><span>مثال توضيحي</span><span id="languageLabel">HTML</span></div><pre><code id="lessonCode"></code></pre><button id="tryBtn" class="try" type="button">▶ جرّب المثال في الساحة</button></div>
+      <section class="quiz"><div class="quiz-title"><span>🧠</span><div><h3>اختبر فهمك <small>(اختياري)</small></h3><p>حل السؤال لو حابب، أو تخطّاه وكمل التحدي.</p></div></div><h4 id="question"></h4><pre id="questionCode" class="prompt-code" dir="ltr"></pre><div id="options" class="options"></div><div id="feedback" class="feedback" aria-live="polite"></div><button id="checkBtn" class="btn primary" disabled>تأكيد الإجابة (اختياري)</button></section>
+      <section id="fillBox" class="challenge"><div class="challenge-head"><div><span class="eyebrow">MINI CHALLENGE</span><h3>كمّل الكود</h3></div><span class="challenge-points">+20 XP</span></div><p id="challengePrompt"></p><pre id="challengeCode" class="prompt-code" dir="ltr"></pre><textarea id="challengeInput" spellcheck="false" placeholder="اكتب الجزء الناقص فقط..."></textarea><div class="challenge-actions"><button id="hintBtn" class="btn ghost">إظهار تلميح</button><button id="runChallenge" class="btn primary">تحقق من الحل</button></div><p id="challengeFeedback" class="feedback" aria-live="polite"></p><div id="hint" class="hint" hidden></div></section>
+      <section id="labBox" class="challenge" hidden><div class="challenge-head"><div><span class="eyebrow">CODE LAB</span><h3>اكتب الكود بنفسك</h3></div><span class="challenge-points">+20 XP</span></div><p id="labGoal"></p><ul id="labChecks" class="checks"></ul><div class="lab"><textarea id="labCode" spellcheck="false" aria-label="محرر الكود"></textarea><iframe id="labPreview" title="معاينة النتيجة" sandbox=""></iframe></div><div class="challenge-actions"><button id="labReset" class="btn ghost" type="button">إعادة الكود الأصلي</button><button id="labRun" class="btn primary" type="button">تحقق من الحل</button></div><p id="labFeedback" class="feedback" aria-live="polite"></p></section><section id="courseDone" class="course-done" hidden><h3>🎉 خلصت المسار!</h3><p id="doneText"></p><div class="done-actions"><a id="nextCourse" class="btn primary" href="index.html">المسار التالي ←</a><button id="certBtn" class="btn ghost" type="button">🎓 حمّل الشهادة</button><a class="btn ghost" href="playground.html">جرّب في الساحة</a></div></section><div class="lesson-footer"><button id="prevBtn" class="btn ghost">السابق</button><button id="nextBtn" class="btn primary" disabled>الدرس التالي ←</button></div>
+    </article>
+  </div>
+</main>
+<script src="course-data.js"></script><script src="labs.js"></script><script src="course.js"></script>
+</body></html>

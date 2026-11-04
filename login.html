@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>CODEX | تسجيل الدخول</title>
+
+    <meta name="description" content="سجّل دخولك أو أنشئ حسابًا في CODEX وكمّل رحلة تعلم البرمجة.">
+
+    <script src="auth.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap">
+
+    <link rel="stylesheet" href="login.css">
+
+    <style>
+        .guest-button {
+            width: 100%;
+            margin-top: 12px;
+            padding: 13px;
+            border: 1px solid #a855f7;
+            border-radius: 10px;
+            background: transparent;
+            color: #d8b4fe;
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .guest-button:hover {
+            background: #a855f7;
+            color: white;
+            box-shadow: 0 0 18px #a855f766;
+        }
+
+        .guest-note {
+            text-align: center;
+            color: #999;
+            font-size: 12px;
+            margin-top: 9px;
+        }
+    </style>
+</head>
+
+<body>
+
+<main class="auth">
+
+    <section class="side">
+
+        <a class="brand" href="login.html">
+            CODE<span>X</span>
+        </a>
+
+        <h1>
+            ابدأ من الصفر…<br>
+            <em>وكمّل لحد الاحتراف.</em>
+        </h1>
+
+        <p>
+            حسابك بيحفظ تقدمك ونقاطك،
+            وتكمّل من آخر درس وقفت عنده.
+        </p>
+
+        <div class="code" dir="ltr">
+            <i></i><i></i><i></i>
+
+            <pre><b>const</b> you = <u>"developer"</u>;
+<b>if</b> (learning) {
+  you.level++;
+}</pre>
+        </div>
+
+        <ul>
+            <li>✓ دروس عربي خطوة بخطوة</li>
+            <li>✓ تحديات عملية وساحة تجربة</li>
+            <li>✓ تقدم ونقاط XP لكل حساب</li>
+        </ul>
+
+    </section>
+
+
+    <section class="card">
+
+        <div class="tabs" role="tablist">
+
+            <button type="button" class="tab on" data-m="login" role="tab">
+                تسجيل الدخول
+            </button>
+
+            <button type="button" class="tab" data-m="register" role="tab">
+                حساب جديد
+            </button>
+
+        </div>
+
+
+        <h2 id="title">أهلاً بعودتك 👋</h2>
+
+
+        <form id="form" novalidate>
+
+            <label class="reg-only" hidden>
+                الاسم
+                <input id="name" autocomplete="name" placeholder="اسمك">
+            </label>
+
+
+            <label>
+                البريد الإلكتروني
+                <input id="email" type="email" dir="ltr"
+                    autocomplete="email"
+                    placeholder="you@example.com" required>
+            </label>
+
+
+            <label>
+                كلمة المرور
+
+                <span class="pw">
+                    <input id="pw" type="password" dir="ltr"
+                        autocomplete="current-password"
+                        placeholder="••••••••" required>
+
+                    <button type="button" id="eye"
+                        aria-label="إظهار كلمة المرور">
+                        👁
+                    </button>
+                </span>
+            </label>
+
+
+            <div class="meter reg-only" hidden>
+                <i id="bar"></i>
+                <small id="barText">8 حروف على الأقل</small>
+            </div>
+
+
+            <label class="reg-only" hidden>
+                تأكيد كلمة المرور
+                <input id="pw2" type="password" dir="ltr"
+                    autocomplete="new-password"
+                    placeholder="••••••••">
+            </label>
+
+
+            <label class="check">
+                <input id="remember" type="checkbox" checked>
+                تفضل مسجل دخول على الجهاز ده
+            </label>
+
+
+            <p id="msg" class="msg" role="alert" aria-live="polite"></p>
+
+
+            <button id="submit" class="go" type="submit">
+                تسجيل الدخول
+            </button>
+
+        </form>
+
+
+        <!-- GUEST LOGIN -->
+        <button type="button" class="guest-button" id="guestLogin">
+            👤 الدخول كضيف
+        </button>
+
+        <p class="guest-note">
+            جرّب CODEX بدون إنشاء حساب
+        </p>
+
+
+        <p class="note">
+            🔒 الحسابات محفوظة على جهازك فقط وكلمات المرور مشفّرة.
+            مفيش مزامنة بين الأجهزة.
+        </p>
+
+    </section>
+
+</main>
+
+
+<script src="login.js"></script>
+
+<script>
+    document.getElementById("guestLogin").addEventListener("click", async function () {
+
+        const button = this;
+
+        try {
+            button.disabled = true;
+            button.textContent = "جاري الدخول...";
+
+            await CodexAuth.guestLogin(
+                document.getElementById("remember").checked
+            );
+
+            location.replace("index.html");
+
+        } catch (error) {
+            alert(error.message || error);
+
+            button.disabled = false;
+            button.textContent = "👤 الدخول كضيف";
+        }
+
+    });
+</script>
+
+</body>
+</html>
